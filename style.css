@@ -1,0 +1,455 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Drawn";
+  src: url(./fonts/chalkcyrillicfreehand.ttf);
+}
+.container {
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+
+.main {
+  background-image: url(./img/fon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.button-play {
+  font-family: "Drawn";
+  font-size: 50px;
+  width: 250px;
+  height: 70px;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.menu__name {
+  margin-top: 150px;
+  font-family: "Drawn";
+  font-size: 90px;
+  color: rgb(0, 0, 0);
+}
+
+.game {
+  display: none;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 0;
+}
+.game__menu {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  cursor: pointer;
+}
+.game__help {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  cursor: pointer;
+}
+.game__attempts {
+  font-family: "Drawn";
+  font-size: 70px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  left: 0;
+  top: 70px;
+}
+.game__element {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.game__element_div {
+  width: 200px;
+  position: relative;
+}
+.game__element_div_head {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid black;
+  top: 53px;
+  left: 103px;
+  display: none;
+}
+.game__element_div_body {
+  width: 50px;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  transform: rotate(90deg);
+  top: 110px;
+  left: 95px;
+  display: none;
+}
+.game__element_div_left-hand {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  transform: rotate(120deg);
+  top: 105px;
+  left: 97px;
+  display: none;
+}
+.game__element_div_left-leg {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  transform: rotate(120deg);
+  top: 147px;
+  left: 97px;
+  display: none;
+}
+.game__element_div_right-hand {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  transform: rotate(60deg);
+  top: 105px;
+  left: 112px;
+  display: none;
+}
+.game__element_div_right-leg {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  transform: rotate(60deg);
+  top: 147px;
+  left: 112px;
+  display: none;
+}
+.game__element_name {
+  font-family: "Drawn";
+  font-size: 90px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 60px;
+  padding-top: 100px;
+}
+.game__element_hangman {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 30px;
+}
+.game__element_word {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.game__element_word-letter {
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 63px;
+}
+.game__element_word-letter_p {
+  font-family: "Drawn";
+  font-size: 60px;
+  display: none;
+}
+.game__element_word-letter_span {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+}
+.game__element_letters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 5px;
+}
+.game__element_letter {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.game__element_letter-p {
+  font-family: "Drawn";
+  font-size: 60px;
+}
+.game__element_letter-true {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+.game__element_letter-false {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+@media screen and (max-width: 1050px) {
+  .game__attempts {
+    top: 25px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .game {
+    align-items: flex-end;
+  }
+  .game__help {
+    position: static;
+  }
+}
+@media screen and (max-width: 600px) {
+  .game__attempts {
+    font-size: 50px;
+  }
+  .game__menu {
+    width: 50px;
+    height: 50px;
+    top: 35px;
+  }
+  .game__element_name {
+    font-size: 50px;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .game__element_letters {
+    gap: 10px;
+  }
+  .game__element_letter {
+    width: 30px;
+    height: 40px;
+  }
+  .game__element_letter-p {
+    font-size: 50px;
+  }
+  .container {
+    padding: 0 25px;
+  }
+}
+.lose {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 100vh;
+  padding-top: 150px;
+  opacity: 0;
+  transition: 1s;
+}
+.lose__text {
+  font-family: "Drawn";
+  font-size: 50px;
+}
+.lose__word {
+  font-family: "Drawn";
+  font-size: 50px;
+}
+.lose__return {
+  font-family: "Drawn";
+  font-size: 50px;
+  width: 250px;
+  height: 70px;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.lose__menu {
+  font-family: "Drawn";
+  font-size: 50px;
+  width: 250px;
+  height: 70px;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.window {
+  background-image: url(img/textur-gas-kvas-com-feba-p-teksturi-myatii-list-bumagi-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 700px;
+  width: 100%;
+  height: 450px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pause {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 100vh;
+  padding-top: 150px;
+  opacity: 0;
+  transition: 1s;
+}
+.pause__toMenu {
+  font-family: "Drawn";
+  font-size: 50px;
+  width: 250px;
+  height: 70px;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.pause__text {
+  font-family: "Drawn";
+  font-size: 50px;
+}
+.pause__word {
+  font-family: "Drawn";
+  font-size: 50px;
+}
+.pause__return {
+  font-family: "Drawn";
+  font-size: 50px;
+  width: 250px;
+  height: 70px;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.pause__menu {
+  font-family: "Drawn";
+  font-size: 50px;
+  width: 250px;
+  height: 70px;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.help {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 100vh;
+  padding-top: 150px;
+  opacity: 0;
+  transition: 1s;
+}
+.help__text {
+  font-family: "Drawn";
+  font-size: 50px;
+}
+.help__word {
+  font-family: "Drawn";
+  font-size: 50px;
+}
+.help__return {
+  font-family: "Drawn";
+  font-size: 50px;
+  width: 250px;
+  height: 70px;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.help__menu {
+  font-family: "Drawn";
+  font-size: 50px;
+  width: 250px;
+  height: 70px;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.win {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 100vh;
+  padding-top: 150px;
+  opacity: 0;
+  transition: 1s;
+}
+.win__text {
+  font-family: "Drawn";
+  font-size: 50px;
+}
+.win__word {
+  font-family: "Drawn";
+  font-size: 50px;
+}
+.win__return {
+  font-family: "Drawn";
+  font-size: 50px;
+  width: 250px;
+  height: 70px;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.win__menu {
+  font-family: "Drawn";
+  font-size: 50px;
+  width: 250px;
+  height: 70px;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

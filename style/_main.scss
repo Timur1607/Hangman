@@ -1,0 +1,277 @@
+
+.main{
+    background-image: url(./img/fon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    // height: 100vh;
+}
+
+.button-play{
+    font-family: 'Drawn';
+    font-size: 50px;
+    width: 250px;
+    height: 70px;
+    border: 5px solid black;
+    border-radius: 15px;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+    &__name{
+        margin-top: 150px;
+        font-family: 'Drawn';
+        font-size: 90px;
+        color: rgb(0, 0, 0);
+    }
+}
+
+.game{
+    display: none;
+    position: relative;
+    width: 100%;
+    // height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    
+    
+    &__menu{
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        cursor: pointer;
+    }
+    &__help{
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        bottom: 50px;
+        right: 0;
+        cursor: pointer;
+    }
+
+    &__attempts{
+        font-family: 'Drawn';
+        font-size: 70px;
+        color: rgb(0, 0, 0);
+        position: absolute;
+        left: 0;
+        top: 70px;
+    }
+
+    &__element{
+        max-width: 600px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+
+        &_div{
+            width: 200px;
+            // height: 200px;
+            position: relative;
+
+            &_head{
+                width: 35px;
+                height: 35px;
+                position: absolute;
+                border-radius: 50%;
+                border: 3px solid black;
+                top: 53px;
+                left: 103px;
+                display: none;
+            }
+
+            &_body{
+                width: 50px;
+                height: 3px;
+                background-color: black;
+                position: absolute;
+                transform: rotate(90deg);
+                top: 110px;
+                left: 95px;
+                display: none;
+            }
+            &_left-hand{
+                width: 30px;
+                height: 3px;
+                background-color: black;
+                position: absolute;
+                transform: rotate(120deg);
+                top: 105px;
+                left: 97px;
+                display: none;
+            }
+            &_left-leg{
+                width: 30px;
+                height: 3px;
+                background-color: black;
+                position: absolute;
+                transform: rotate(120deg);
+                top: 147px;
+                left: 97px;
+                display: none;
+            }
+            &_right-hand{
+                width: 30px;
+                height: 3px;
+                background-color: black;
+                position: absolute;
+                transform: rotate(60deg);
+                top: 105px;
+                left: 112px;
+                display: none;
+            }
+            &_right-leg{
+                width: 30px;
+                height: 3px;
+                background-color: black;
+                position: absolute;
+                transform: rotate(60deg);
+                top: 147px;
+                left: 112px;
+                display: none;
+            }
+        }
+
+        &_name{
+            font-family: 'Drawn';
+            font-size: 90px;
+            color: rgb(0, 0, 0);
+            margin-bottom: 60px;
+            padding-top: 100px;
+        }
+        &_hangman{
+            width: 200px;
+            height: 200px;
+            margin-bottom: 30px;
+        }
+
+        &_word{
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            &-letter{
+                width: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                height: 63px;
+                &_p{
+                    font-family: 'Drawn';
+                    font-size: 60px;
+                    display: none;
+                }
+                &_span{
+                    width: 100%;
+                    height: 3px;
+                    background-color: black;
+                }
+            }
+        }
+
+        &_letters{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 5px;
+        }
+        &_letter{
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &-p{
+                font-family: 'Drawn';
+                font-size: 60px;
+            }
+            &-true{
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                display: none;
+            }
+            &-false{
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1050px){
+    .game{
+        &__attempts{
+            top: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 850px){
+    .game{
+        align-items: flex-end;
+        &__help{
+            position: static;
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    .game{
+        &__attempts{
+            font-size: 50px;
+        }
+
+        &__menu{
+            width: 50px;
+            height: 50px;
+            top: 35px;
+        }
+        &__element{
+            &_name{
+                font-size: 50px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px){
+    .game{
+        &__element{
+            &_letters{
+                gap: 10px;
+            }
+            &_letter{
+                width: 30px;
+                height: 40px;
+                
+                &-p{
+                    font-size: 50px;
+                }
+            }
+
+        }
+    }
+    .container{
+        padding: 0 25px;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виселица</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+</head>
+<body>
+    <section class="main">
+        <div class="container">
+            <div class="menu">
+                <p class="menu__name">Виселица</p>
+                <button class="button-play">ИГРАТЬ</button>
+            </div>
+            <div class="game">
+                <div class="game__element">
+                    <p class="game__element_name">Тема:</p>
+                    <div class="game__element_word">
+
+                    </div>
+                    <div class="game__element_div">
+                        <img class="game__element_hangman" src="./img/stage1-Photoroom.png" alt="">
+                        <div class="game__element_div_head"></div>
+                        <div class="game__element_div_body"></div>
+                        <div class="game__element_div_left-hand"></div>
+                        <div class="game__element_div_left-leg"></div>
+                        <div class="game__element_div_right-hand"></div>
+                        <div class="game__element_div_right-leg"></div>
+                    </div>
+                    <div class="game__element_letters">
+                    </div>
+                </div>
+                <img class="game__menu" src="./img/menu-bar_10080494.png" alt="">
+                <img class="game__help" src="./img/question_5629308.png" alt="">
+                <p class="game__attempts">Попыток: 6</p>
+            </div>
+        </div>
+    </section>
+    <section class="lose">
+        <div class="container">
+            <div class="window">
+                <p class="lose__text">Вы проиграли!</p>
+                <p class="lose__word">Слово:</p>
+                <button class="lose__return">В меню</button>
+                <button class="lose__menu">Новая игра</button>
+            </div>
+        </div>
+    </section>
+    <section class="pause" id="0">
+        <div class="container">
+            <div class="window">
+                <button class="pause__return">Продолжить</button>
+                <button class="pause__menu">Новая игра</button>
+                <button class="pause__toMenu">В меню</button>
+            </div>
+        </div>
+    </section>
+    <section class="help">
+        <div class="container">
+            <div class="window">
+                <p class="help__text">Одна из букв:</p>
+                <button class="help__return">Продолжить</button>
+            </div>
+        </div>
+    </section>
+    <section class="win" id="0">
+        <div class="container">
+            <div class="window">
+                <p class="win__text">Вы выиграли!</p>
+                <button class="win__menu">Новая игра</button>
+                <button class="win__return">В меню</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
